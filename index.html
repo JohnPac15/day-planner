@@ -30,27 +30,48 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div class="row mt-1">
-          <span id="form" class="col-2 border-top border-primary " name="9">9:00 Am</span>
-          <div value="9" id="9" class="todo mt-0 col-8 border border-primary saveitem" value="9"></div>
-          <button value="9" class="addbtn col-1 border border-primary">New</button>
-          <button value="9" class="savebtn col-1 border border-primary">Save</button>
-
-          <span id="form" class="col-2 border-top border-primary " name="10">10:00 Am</span>
-          <form id="10" class="mt-0 col-8 border border-primary saveitem">
-            <textarea class=" text-white border border-primary h-100' name=" id="textarea" cols="50" rows="2"></textarea>
+      <div class="row m-2 h-auto">
+        <button value="9" class="addbtn col-12 border border-primary">New</button>
+        <div class="todo m-1 p-1 w-100"></div>
+        <button type="submit" class="savebtn col-12 border border-primary">Save</button>
+      </div>
+      <div class="row mt-1 h-auto">
+        <span id="form" class="col-2 border-top border-primary " name="9">9:00 Am</span>
+        <div value="9" id="9" class="mt-0 col-8 border border-primary saveitem" value="9"></div>
+        <button value="9" class="savebtn col-2 border border-primary">Save</button>
+      </div>
+      
+        <!-- <div class="col-12 border-primary">
+          <span class="modal-container">&times;</span>
+          <h3>Task</h3>
+          <form class="modal-form">
+            <label for="start-time"></label>
+            <select id="start-select"></select>
+            <label for="end-time"></label>
+            <select id="end-select"></select>
           </form>
-          <button value="10" class="savebtn col-2 border border-primary">save</button>
+        </div> -->
+      
+      <div class="row mt-1 border-primary">        <span id="form" class="col-2 border-top border-primary " name="10">10:00 Am</span>
+        <form id="10" class="mt-0 col-8 border border-primary saveitem">
+          <textarea class=" text-white border border-primary h-100' name=" id="textarea" cols="50" rows="2"></textarea>
+        </form>
+        <button value="10" class="savebtn col-2 border border-primary">save</button>
+      </div>
+
+      <div class="row mt-1 border-primary">
 
           <span id="form" class="col-2 border-top border-primary " name="10">11:00 Am</span>
           <div id="11" class="todo11 mt-0 col-8 border border-primary saveitem"></div>
           <button value="11" class="savebtn col-2 border border-primary">save</button>
-
+      </div>
+      <div class="row mt-1 border-primary">
           <span id="form" class="col-2 border-top border-primary " name="10">12:00 Pm</span>
           <form id="12" class="mt-0 col-8 border border-primary saveitem">
             <textarea class=" text-white border border-primary h-100' name=" id="textarea" cols="50" rows="2"></textarea>
           </form>
           <button value="12" class="savebtn col-2 border border-primary">save</button>
+      </div>
 
           <span id="form" class="col-2 border-top border-primary " name="10">1:00 Pm</span>
           <form id="13" class="mt-0 col-8 border border-primary saveitem">
