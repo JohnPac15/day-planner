@@ -10,6 +10,17 @@ console.log(textBox)
 var form = document.getElementById("form")
 var task = document.getElementById("textarea")
 
+let li = document.createElement("li")
+var timeBlock9 = document.getElementById("9")
+var timeBlock10 = document.getElementById("10")
+var timeBlock11 = document.getElementById("11")
+var timeBlock12 = document.getElementById("12")
+var timeBlock1 = document.getElementById("1")
+var timeBlock2 = document.getElementById("2")
+var timeBlock3 = document.getElementById("3")
+var timeBlock4 = document.getElementById("4")
+var timeBlock5 = document.getElementById("5")
+
 arrayData = JSON.parse(localStorage.getItem("data"));
 console.log(arrayData)
 
@@ -31,6 +42,56 @@ let getHour = todaysDate.getHours();
 console.log(getHour);
 currentDate.innerHTML = todaysDate;
 
+displayTask = function(){
+    for( i=0; i < arrayData.length; i++ ) {
+        let numberSlot = arrayData[i].button
+        let arrayText = arrayData[i].task
+        let li = document.createElement("li")
+        
+        console.log(numberSlot, "numbers")
+        console.log(arrayText, "task")
+
+        if(numberSlot == 9){
+            li.textContent = arrayText
+            timeBlock9.appendChild(li)
+        }
+        if(numberSlot == 10){
+            li.textContent = arrayText
+            timeBlock10.appendChild(li)
+        }
+        if(numberSlot == 11){
+            li.textContent = arrayText
+            timeBlock11.appendChild(li)
+        }
+        if(numberSlot == 12){
+            li.textContent = arrayText
+            timeBlock12.appendChild(li)
+        }
+        if(numberSlot == 1){
+            li.textContent = arrayText
+            timeBlock1.appendChild(li)
+        }
+        if(numberSlot == 2){
+            li.textContent = arrayText
+            timeBlock2.appendChild(li)
+        }
+        if(numberSlot == 3){
+            li.textContent = arrayText
+            timeBlock3.appendChild(li)
+        }
+        if(numberSlot == 4){
+            li.textContent = arrayText
+            timeBlock4.appendChild(li)
+        }
+        if(numberSlot == 5){
+            li.textContent = arrayText
+            timeBlock5.appendChild(li)
+        }
+    }
+    
+}
+
+
 $(".addbtn").on("click", function() {
     console.log("clicked")
     let div2El = document.createElement("div")
@@ -41,6 +102,11 @@ $(".addbtn").on("click", function() {
     let newOption2 = new Option('10:00 Am', 10)
     let newOption3 = new Option('11:00 Am',11)
     let newOption4 = new Option('12:00 Pm',12)
+    let newOption5 = new Option('1:00 Pm',1)
+    let newOption6 = new Option('2:00 Pm',2)
+    let newOption7 = new Option('3:00 Pm',3)
+    let newOption8 = new Option('4:00 Pm',4)
+    let newOption9 = new Option('5:00 Pm',5)
     let optionEl = document.createElement("options")
 
     
@@ -61,6 +127,11 @@ $(".addbtn").on("click", function() {
     selectEl.appendChild(newOption2)
     selectEl.appendChild(newOption3)
     selectEl.appendChild(newOption4)
+    selectEl.appendChild(newOption5)
+    selectEl.appendChild(newOption6)
+    selectEl.appendChild(newOption7)
+    selectEl.appendChild(newOption8)
+    selectEl.appendChild(newOption9)
 
     
     $(".savebtn").click(function(event){
@@ -79,6 +150,43 @@ $(".addbtn").on("click", function() {
             button: optionNumber,   
         };
         console.log(taskList)
+
+        if(taskList.button == 9){
+            li.textContent = taskList.task
+            timeBlock9.appendChild(li)
+        }
+        if(taskList.button == 10){
+            li.textContent = taskList.task
+            timeBlock10.appendChild(li)
+        }
+        if(taskList.button ==11){
+            li.textContent = taskList.task
+            timeBlock11.appendChild(li)
+        }
+        if(taskList.button == 12){
+            li.textContent = taskList.task
+            timeBlock12.appendChild(li)
+        }
+        if(taskList.button == 1){
+            li.textContent = taskList.task
+            timeBlock1.appendChild(li)
+        }
+        if(taskList.button == 2){
+            li.textContent = taskList.task
+            timeBlock2.appendChild(li)
+        }
+        if(taskList.button == 3){
+            li.textContent = taskList.task
+            timeBlock3.appendChild(li)
+        }
+        if(taskList.button == 4){
+            li.textContent = taskList.task
+            timeBlock4.appendChild(li)
+        }
+        if(taskList.button == 5){
+            li.textContent = taskList.task
+            timeBlock5.appendChild(li)
+        }
         
         if(arrayData == null) {
             console.log(arrayData)
@@ -93,17 +201,21 @@ $(".addbtn").on("click", function() {
             alert("Item Saved")
             
         };
-        
     })
 })
 
 
 
+
+displayTask();
+
+
+
 for(i =0; i < 9; i++){
     var thisTimeBlock = i + 9
-    console.log(thisTimeBlock)
+    // console.log(thisTimeBlock)
     var thishour = ("#") + thisTimeBlock
-    console.log(thishour)
+    // console.log(thishour)
     
     if(thisTimeBlock < getHour){
         $(thishour).addClass("bg-primary")
@@ -122,7 +234,6 @@ for(i =0; i < 9; i++){
     
     
 }
-
 
 
 // displayLocalStorage = function() {
