@@ -1,10 +1,18 @@
 var task = {};
 var currentDate = document.getElementById("currentDay");
-// var timeSlot = document.getElementById("time-slot")
-var Nine = document.getElementById("9")
 var divMain = document.querySelector(".todo")
-
 var textBox = document.querySelector(".textBox")
+var spanText = document.querySelector(".todo-form")
+var addbtn = document.getElementById("add")
+var btn9 =document.querySelector("addbtn-9")
+var btn10 =document.querySelector("addbtn-10")
+var btn11 =document.querySelector("addbtn-11")
+var btn12 =document.querySelector("addbtn-12")
+var btn13 =document.querySelector("addbtn-13")
+var btn14 =document.querySelector("addbtn-14")
+var btn15 =document.querySelector("addbtn-15")
+var btn16 =document.querySelector("addbtn-16")
+var btn17 =document.querySelector("addbtn-17")
 
 console.log(textBox)
 var form = document.getElementById("form")
@@ -15,85 +23,62 @@ var timeBlock9 = document.getElementById("9")
 var timeBlock10 = document.getElementById("10")
 var timeBlock11 = document.getElementById("11")
 var timeBlock12 = document.getElementById("12")
-var timeBlock1 = document.getElementById("1")
-var timeBlock2 = document.getElementById("2")
-var timeBlock3 = document.getElementById("3")
-var timeBlock4 = document.getElementById("4")
-var timeBlock5 = document.getElementById("5")
+var timeBlock1 = document.getElementById("13")
+var timeBlock2 = document.getElementById("14")
+var timeBlock3 = document.getElementById("15")
+var timeBlock4 = document.getElementById("16")
+var timeBlock5 = document.getElementById("17")
 
 arrayData = JSON.parse(localStorage.getItem("data"));
 console.log(arrayData)
 
+divArray= [
+    timeBlock9,
+    timeBlock10,
+    timeBlock11,
+    timeBlock12,
+    timeBlock1,
+    timeBlock2,
+    timeBlock3,
+    timeBlock4,
+    timeBlock5
+];
+divndex = 0
+clickTheDiv = function() {
+    console.log(divArray[0].text)
 
 
-// var hour = moment().set({'hour': 9, 'minute': 00, 'seconds': 00})
-// var minute = moment().set('minute', '0')
+}
 
-// var taskDate = $("#modalDueDate").val();
-// console.log(timeSlot).name
-// var showTime = timeSlot.innerHTML = hour
-// var blockTime =showTime._d
-// console.log(blockTime)
+
+var hour = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+var timeHour = moment().hour()
+var timeSpecial = moment().format("h:mm:ss a")
+console.log(timeSpecial)
 
 let todaysDate = new Date();
 console.log(todaysDate);
 
 let getHour = todaysDate.getHours();
 console.log(getHour);
-currentDate.innerHTML = todaysDate;
 
-displayTask = function(){
-    for( i=0; i < arrayData.length; i++ ) {
-        let numberSlot = arrayData[i].button
-        let arrayText = arrayData[i].task
-        let li = document.createElement("li")
-        
-        console.log(numberSlot, "numbers")
-        console.log(arrayText, "task")
 
-        if(numberSlot == 9){
-            li.textContent = arrayText
-            timeBlock9.appendChild(li)
-        }
-        if(numberSlot == 10){
-            li.textContent = arrayText
-            timeBlock10.appendChild(li)
-        }
-        if(numberSlot == 11){
-            li.textContent = arrayText
-            timeBlock11.appendChild(li)
-        }
-        if(numberSlot == 12){
-            li.textContent = arrayText
-            timeBlock12.appendChild(li)
-        }
-        if(numberSlot == 1){
-            li.textContent = arrayText
-            timeBlock1.appendChild(li)
-        }
-        if(numberSlot == 2){
-            li.textContent = arrayText
-            timeBlock2.appendChild(li)
-        }
-        if(numberSlot == 3){
-            li.textContent = arrayText
-            timeBlock3.appendChild(li)
-        }
-        if(numberSlot == 4){
-            li.textContent = arrayText
-            timeBlock4.appendChild(li)
-        }
-        if(numberSlot == 5){
-            li.textContent = arrayText
-            timeBlock5.appendChild(li)
-        }
-    }
-    
+currentDate.innerHTML = hour;
+
+reload = function () {
+    document.location.reload();
 }
 
 
-$(".addbtn").on("click", function() {
-    console.log("clicked")
+
+btn9.addEventListener("click", function() {
+    btn9 = 9 
+})
+
+
+
+$("#add").on("click", function(event) {
+    console.log(event.target, "click event")
     let div2El = document.createElement("div")
     let formEl = document.createElement("form")
     let inputEl = document.createElement("input")
@@ -102,12 +87,11 @@ $(".addbtn").on("click", function() {
     let newOption2 = new Option('10:00 Am', 10)
     let newOption3 = new Option('11:00 Am',11)
     let newOption4 = new Option('12:00 Pm',12)
-    let newOption5 = new Option('1:00 Pm',1)
-    let newOption6 = new Option('2:00 Pm',2)
-    let newOption7 = new Option('3:00 Pm',3)
-    let newOption8 = new Option('4:00 Pm',4)
-    let newOption9 = new Option('5:00 Pm',5)
-    let optionEl = document.createElement("options")
+    let newOption5 = new Option('1:00 Pm',13)
+    let newOption6 = new Option('2:00 Pm',14)
+    let newOption7 = new Option('3:00 Pm',15)
+    let newOption8 = new Option('4:00 Pm',16)
+    let newOption9 = new Option('5:00 Pm',17)
 
     
 
@@ -119,7 +103,7 @@ $(".addbtn").on("click", function() {
     $(inputEl).addClass("taskItem w-100 border-dark")
     inputEl.setAttribute("style", "width: 100%; border: 1px solid white");
     
-    divMain.appendChild(div2El)
+    spanText.appendChild(div2El)
     div2El.appendChild(formEl)
     formEl.appendChild(inputEl)
     formEl.appendChild(selectEl)
@@ -147,46 +131,10 @@ $(".addbtn").on("click", function() {
         var taskList = 
         {
             task: taskText,
-            button: optionNumber,   
+            button: optionNumber,
+            timeStamp: timeSpecial   
         };
         console.log(taskList)
-
-        if(taskList.button == 9){
-            li.textContent = taskList.task
-            timeBlock9.appendChild(li)
-        }
-        if(taskList.button == 10){
-            li.textContent = taskList.task
-            timeBlock10.appendChild(li)
-        }
-        if(taskList.button ==11){
-            li.textContent = taskList.task
-            timeBlock11.appendChild(li)
-        }
-        if(taskList.button == 12){
-            li.textContent = taskList.task
-            timeBlock12.appendChild(li)
-        }
-        if(taskList.button == 1){
-            li.textContent = taskList.task
-            timeBlock1.appendChild(li)
-        }
-        if(taskList.button == 2){
-            li.textContent = taskList.task
-            timeBlock2.appendChild(li)
-        }
-        if(taskList.button == 3){
-            li.textContent = taskList.task
-            timeBlock3.appendChild(li)
-        }
-        if(taskList.button == 4){
-            li.textContent = taskList.task
-            timeBlock4.appendChild(li)
-        }
-        if(taskList.button == 5){
-            li.textContent = taskList.task
-            timeBlock5.appendChild(li)
-        }
         
         if(arrayData == null) {
             console.log(arrayData)
@@ -194,54 +142,96 @@ $(".addbtn").on("click", function() {
             arrayData.push(taskList)
             localStorage.setItem("data", JSON.stringify(arrayData));
             alert("First Item Saved")
+            spanText.textContent = ""
+            reload();
         }else {
             console.log(arrayData)
             arrayData.push(taskList)
             localStorage.setItem("data", JSON.stringify(arrayData));
             alert("Item Saved")
+            spanText.textContent = ""
+            reload();
             
         };
-    })
+    });
+    
 })
 
+displayTask = function(){
+    if(arrayData === null) {
+        arrayData =[]
+    }
+    for( i=0; i < arrayData.length; i++ ) {
+        let numberSlot = arrayData[i].button
+        let arrayText = arrayData[i].task
+        let arrrayTime = arrayData[i].timeStamp
+        let li = document.createElement("li")
+        
+        console.log(numberSlot, "numbers")
+        console.log(arrayText, "task")
 
-
-
-displayTask();
-
-
+        if(numberSlot == 9){
+            li.textContent = arrayText + " / " + arrrayTime
+            timeBlock9.appendChild(li)
+        }
+        if(numberSlot == 10){
+            li.textContent = arrayText+ " / " + arrrayTime
+            timeBlock10.appendChild(li)
+        }
+        if(numberSlot == 11){
+            li.textContent = arrayText+ " / " + arrrayTime
+            timeBlock11.appendChild(li)
+        }
+        if(numberSlot == 12){
+            li.textContent = arrayText+ " / " + arrrayTime
+            timeBlock12.appendChild(li)
+        }
+        if(numberSlot == 13){
+            li.textContent = arrayText+ " / " + arrrayTime
+            timeBlock1.appendChild(li)
+        }
+        if(numberSlot == 14){
+            li.textContent = arrayText+ " / " + arrrayTime
+            timeBlock2.appendChild(li)
+        }
+        if(numberSlot == 15){
+            li.textContent = arrayText+ " / " + arrrayTime
+            timeBlock3.appendChild(li)
+        }
+        if(numberSlot == 16){
+            li.textContent = arrayText+ " :Saved at " + arrrayTime
+            timeBlock4.appendChild(li)
+        }
+        if(numberSlot == 17){
+            li.textContent = arrayText+ " / " + arrrayTime
+            timeBlock5.appendChild(li)
+        }
+    }
+    
+}
 
 for(i =0; i < 9; i++){
     var thisTimeBlock = i + 9
     // console.log(thisTimeBlock)
     var thishour = ("#") + thisTimeBlock
-    // console.log(thishour)
+    console.log(timeHour)
     
-    if(thisTimeBlock < getHour){
-        $(thishour).addClass("bg-primary")
+    if(thisTimeBlock < timeHour){
+        $(thishour).addClass("bg-danger")
     }
     
-    if(thisTimeBlock == getHour) {
+    if(thisTimeBlock == timeHour) {
         $(thishour).addClass("bg-warning text-dark")
     }
-    
-    if(thisTimeBlock > getHour){
-        $(thishour).addClass("bg-secondary")
-    }
-    else{
-        $(thishour).addClass("bg-danger")
+
+    if(thisTimeBlock > timeHour) {
+        $(thishour).addClass("bg-primary")
     }
     
     
 }
 
+displayTask();
 
-// displayLocalStorage = function() {
-//     debugger
-//     savedData
-//     console.log(savedData)
-// }
-
-// displayLocalStorage();
-
+    
 
