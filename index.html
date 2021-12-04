@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Work Day Scheduler</title>
   </head>
@@ -31,83 +32,76 @@
     <div class="container">
       <!-- Timeblocks go here -->
 
-      <!-- buttons/form -->
-      <!-- <div class="row h-auto btn-box">
-        <button value="9" class=" fs-1 addbtn col-12 border border-primary">New</button>
-        <div class="todo m-1 p-1 w-100"></div>
-        <button type="submit" class="savebtn col-12 border border-primary">Save</button>
-      </div> -->
-
       <!-- time block 9am -->
       <div class="row mt-1 h-auto">
         <span id="form" class="col-2 border-top border-primary " name="9">9:00 Am</span>
-        <span id="9" class="h-auto todo-form mt-0 col-8 border border-primary saveitem" value="9"></span>
-        <button id="add" class="addbtn-9 col-1 border border-primary">Add</button>
-        <button value="9" class="savebtn col-1 border border-primary">Save</button>
+        <span id="9" class="h-auto todo-form-9 mt-0 col-8 border border-primary saveitem" value="9"></span>
+        <button id="add" class="addbtn-9 col-1 border border-primary"><span class="oi oi-plus"></span></button>
+        <button value="9" class="savebtn col-1 border border-primary"><span class="oi oi-file"></span></button>
       </div>
       
       <!-- time block 10am -->
       <div class="row mt-1 h-auto">
         <span id="form" class="col-2 border-top border-primary " name="9">10:00 Am</span>
-        <span id="10" class="h-auto todo-form mt-0 col-8 border border-primary saveitem"></span>
-        <button id="add" class="addbtn-10 col-1 border border-primary">Add</button>
-        <button value="9" class="savebtn col-1 border border-primary">Save</button>
+        <span id="10" class="h-auto todo-form-10 mt-0 col-8 border border-primary saveitem"></span>
+        <button id="add" class="addbtn-10 col-1 border border-primary"><span class="oi oi-plus"></span></button>
+        <button value="9" class="savebtn col-1 border border-primary"><span class="oi oi-file"></span></button>
       </div>
 
        <!-- time block 11am -->
        <div class="row mt-1 h-auto">
         <span id="form" class="col-2 border-top border-primary " name="9">11:00 Am</span>
-        <span id="11" class="h-auto todo form mt-0 col-8 border border-primary saveitem"></span>
-        <button id="add" class="addbtn-11 col-1 border border-primary">Add</button>
-        <button value="9" class="savebtn col-1 border border-primary">Save</button>
+        <span id="11" class="h-auto todo-form-11 mt-0 col-8 border border-primary saveitem"></span>
+        <button id="add" class="addbtn-11 col-1 border border-primary"><span class="oi oi-plus"></span></button>
+        <button value="9" class="savebtn col-1 border border-primary"><span class="oi oi-file"></span></button>
       </div>
 
       <!-- time block 12pm -->
       <div class="row mt-1 h-auto">
         <span id="form" class="col-2 border-top border-primary " name="9">12:00 Pm</span>
-        <span id="12" class="h-auto todo-form mt-0 col-8 border border-primary saveitem"></span>
-        <button id="add" class="addbtn-12 col-1 border border-primary">Add</button>
-        <button value="9" class="savebtn col-1 border border-primary">Save</button>
+        <span id="12" class="h-auto todo-form-12 mt-0 col-8 border border-primary saveitem"></span>
+        <button id="add" class="addbtn-12 col-1 border border-primary"><span class="oi oi-plus"></span></button>
+        <button value="9" class="savebtn col-1 border border-primary"><span class="oi oi-file"></span></button>
       </div>
 
       <!-- time block 1pm -->
       <div class="row mt-1 h-auto">
         <span id="form" class="col-2 border-top border-primary " name="9">1:00 Pm</span>
-        <span id="13" class="h-auto todo-form mt-0 col-8 border border-primary saveitem"></span>
-        <button id="add" class="addbtn-13 col-1 border border-primary">Add</button>
-        <button value="9" class="savebtn col-1 border border-primary">Save</button>
+        <span id="13" class="h-auto todo-form-13 mt-0 col-8 border border-primary saveitem"></span>
+        <button id="add" class="addbtn-13 col-1 border border-primary"><span class="oi oi-plus"></span></button>
+        <button value="9" class="savebtn col-1 border border-primary"><span class="oi oi-file"></span></button>
       </div>
 
        <!-- time block 2pm -->
        <div class="row mt-1 h-auto">
         <span id="form" class="col-2 border-top border-primary " name="9">2:00 Pm</span>
-        <span id="14" class="h-auto todo-form mt-0 col-8 border border-primary saveitem"></span>
-        <button id="add" class="addbtn-14 col-1 border border-primary">Add</button>
-        <button value="9" class="savebtn col-1 border border-primary">Save</button>
+        <span id="14" class="h-auto todo-form-14 mt-0 col-8 border border-primary saveitem"></span>
+        <button id="add" class="addbtn-14 col-1 border border-primary"><span class="oi oi-plus"></span></button>
+        <button value="9" class="savebtn col-1 border border-primary"><span class="oi oi-file"></span></button>
       </div>
 
        <!-- time block 3pm -->
        <div class="row mt-1 h-auto">
         <span id="form" class="col-2 border-top border-primary " name="9">3:00 Pm</span>
-        <span id="15" class="h-auto todo-form mt-0 col-8 border border-primary saveitem"></span>
-        <button id="add" class="addbtn-15 col-1 border border-primary">Add</button>
-        <button value="9" class="savebtn col-1 border border-primary">Save</button>
+        <span id="15" class="h-auto todo-form-15 mt-0 col-8 border border-primary saveitem"></span>
+        <button id="add" class="addbtn-15 col-1 border border-primary"><span class="oi oi-plus"></span></button>
+        <button value="9" class="savebtn col-1 border border-primary"><span class="oi oi-file"></span></button>
       </div>
 
        <!-- time block 4pm -->
        <div class="row mt-1 h-auto">
         <span id="form" class="col-2 border-top border-primary " name="9">4:00 Pm</span>
-        <span id="16" class="h-auto todo-form mt-0 col-8 border border-primary saveitem"></span>
-        <button id="add" class="addbtn-16 col-1 border border-primary">Add</button>
-        <button value="9" class="savebtn col-1 border border-primary">Save</button>
+        <span id="16" class="h-auto todo-form-16 mt-0 col-8 border border-primary saveitem"></span>
+        <button id="add" class="addbtn-16 col-1 border border-primary"><span class="oi oi-plus"></span></button>
+        <button value="9" class="savebtn col-1 border border-primary"><span class="oi oi-file"></span></button>
       </div>
 
        <!-- time block 5pm -->
        <div class="row mt-1 h-auto">
         <span id="form" class="col-2 border-top border-primary " name="9">5:00 Pm</span>
-        <span id="17" class="h-auto todo-form mt-0 col-8 border border-primary saveitem"></span>
-        <button id="add" class="addbtn-17 col-1 border border-primary">Add</button>
-        <button value="9" class="savebtn col-1 border border-primary">Save</button>
+        <span id="17" class="h-auto todo-form-17 mt-0 col-8 border border-primary saveitem"></span>
+        <button id="add" class="addbtn-17 col-1 border border-primary"><span class="oi oi-plus"></span></button>
+        <button value="9" class="savebtn col-1 border border-primary"><span class="oi oi-file"></span></button>
       </div>
 
        

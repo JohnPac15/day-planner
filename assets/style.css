@@ -70,6 +70,7 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-.btn-box{
+li{
+  padding: 1% 0%;
 
 }
