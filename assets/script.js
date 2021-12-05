@@ -1,4 +1,5 @@
 var task = {};
+
 var currentDate = document.getElementById("currentDay");
 var divMain = document.querySelector(".todo")
 var textBox = document.querySelector(".textBox")
@@ -201,10 +202,13 @@ displayTask = function(){
     
 }
 
-for(i =0; i < 9; i++){
-    var thisTimeBlock = i + 9
-    var thishour = ("#") + thisTimeBlock
-    console.log(timeHour)
+    
+    for(i =0; i < 9; i++){
+        var thisTimeBlock = i + 9
+        var thishour = ("#") + thisTimeBlock
+        
+
+    console.log(thisTimeBlock, timeHour, thishour)
     
     if(thisTimeBlock < timeHour){
         $(thishour).addClass("bg-danger text-white")
@@ -214,12 +218,13 @@ for(i =0; i < 9; i++){
         $(thishour).addClass("bg-warning text-dark")
     }
 
-    if(thisTimeBlock > timeHour) {
-        $(thishour).addClass("bg-primary")
+    else{
+        $(thishour).addClass("bg-primary text-white")
     }
     
     
 }
+
 
 displayTask();
 
